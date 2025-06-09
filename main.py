@@ -4,7 +4,6 @@ from models.query import QueryRequest, QueryResponse
 from services.query_builder import QueryBuilder
 from config.settings import api_enabled
 
-# Construct the description based on API status
 api_status = "Using Gemini API for query parsing." if api_enabled else "Gemini API disabled; using manual parsing (may be less accurate for complex queries)."
 app_description = f"""
 API for processing medical queries related to appointments, medicines, lab reports, and patient details.
@@ -31,7 +30,7 @@ app = FastAPI(
                 "application/json": {
                     "example": {
                         "result": "Appointment booked with Dr. Smith on 2025-06-10",
-                        "error": None  # Changed 'null' to 'None'
+                        "error": None  
                     }
                 }
             }

@@ -2,15 +2,15 @@ import os
 from dotenv import load_dotenv
 from openai import OpenAI, OpenAIError
 
-# Load environment variables from .env file
+
 load_dotenv()
 
-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", "your-default-openai-api-key-here")
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", "Your Key")
 client = OpenAI(api_key=OPENAI_API_KEY)
 
 api_enabled = True
 try:
-    # Test the API key by making a simple request to ChatGPT
+    
     test_response = client.chat.completions.create(
         model="gpt-3.5-turbo",
         messages=[
